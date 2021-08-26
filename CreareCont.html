@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+		<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "inner-header">	
+				<h1> Gym<span>Life Healty</span>Body </h1>
+			</div>
+		</div>
+		
+		<div class = "login">
+		<h1>Login:</h1> 
+			<form action="action.php" method="get">
+				<div class="container1">
+					<label><b>Nume utilizator: </b></label> <i class="fa fa-user-o"></i><br>
+					<input type="text" placeholder="Introduceți numele" name="uname" required><br>
+					<label><b>Parolă: </b></label><i class="fa fa-unlock-alt"></i><br>
+					<input type="password" placeholder="Introduceți parola" name="psw" required><br>
+					<label for="rol"><b>Rol: </b></label> <i class="fa fa-ravelry"></i><br>
+					<input list="roluri" name="rol" id="rol">
+					<datalist id="roluri">
+						<option value="Client">
+						<option value="Antrenor">
+					</datalist>
+					<br>
+					<button type="submit">Autentificare</button><br>
+					<label>
+					<input type="checkbox" checked="checked" name="remember"> Ține-mă minte
+					</label>
+				</div>
+				<div class="container1">
+				<button type="button" class="cancelbtn">Anulare</button>
+				</div>
+			</form>
+		</div>
+		
+		<nav>
+			<ul class = "menu">
+				<li>
+					<a href = "Principala.html">Acasă</a>
+				</li>
+				<li class="hasChild" >
+					<a href = "">Produse</a>
+					<ul>
+						<li><a href="Suplimente.html">Suplimente</a></li>
+						<li><a href="PentruEa.html">PentruEa</a></li>
+						<li><a href="">După Sport</a></li>
+						<li><a href="">După Obiectiv</a></li>
+					</ul>
+				</li>
+				<li class = "hasChild">
+					<a href = "">Register/Login</a>
+					<ul>
+						<li><a href = "ContClient.html"> Register Client </a></li>
+						<li><a href = "ContAntrenor.html"> Register Antrenor </a></li>
+						<li><a href = "CreareCont.html"> Login </a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "Antrenament.html">Antrenament</a>
+				</li>
+				<li>
+					<a href = "Antrenori.html">Antrenori</a>
+				</li>
+				<li>
+					<a href = "Detalii.html">Detalii</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class = "footer1">
+			<div class = "innerfooter1">
+				<p>Copyright &copy; 2021<p>
+				<p>Date de contact: griggmihai@yahoo.com<p>
+			</div>
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

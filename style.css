@@ -1,0 +1,391 @@
+*{
+	box-sizing: border-box;
+}
+
+body
+{
+	min-height: 100%;
+	margin: 0;
+}
+
+html
+{
+	background-color:pink;
+	height: 100%;
+	margin-bottom:5%
+}
+
+.header{
+	width: 100%;
+	height: 80px;
+	display: block;
+	background: linear-gradient(red, yellow ,blue);
+	
+}
+
+.inner-header{
+	width: 50%;
+	height: 100%;
+	margin:0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	
+}
+
+.inner-header h1{
+	font-weight: 500;
+	color: #222;
+	letter-spacing: 5px;
+	position: relative;
+	font-size: 3em;
+	
+}
+
+.inner-header span
+{
+	transition: 0.5s;
+}
+
+h1:hover span:nth-child(1)
+{
+	margin-right: 10px;
+}
+h1:hover span:nth-child(1)
+{
+	margin-left: 10px;
+}
+h1:hover span
+{
+	color: #fff;
+	text-shadow: 0 0 10px #fff,
+				 0 0 20px #fff,
+				 0 0 40px #fff,
+				 0 0 80px #fff,
+				 0 0 120px #fff,
+				 0 0 160px #fff,
+}
+
+
+
+.banner-img{
+	background-image: url(poza1.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center, center;
+	height: 100%
+}
+
+.footer{
+	text-align: center;
+	background: linear-gradient(red, yellow ,blue);
+	flex-shrink: 0;
+}
+
+.innerfooter{
+	width: 50%;
+	height: 100%;
+	margin:0 auto;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	color: white;
+}
+
+.main{
+	min-height: calc(100vh - 80px - 87px);
+}
+
+.menu{
+	background: pink;
+	position:fixed;
+	bottom:0%;
+	width:100%;	
+}
+.menu a{
+		color: black;
+		padding:10px;
+		display:inline-block;
+}
+.menu li{
+		display:inline-block;
+		padding:5px;
+		margin-right: 5%;
+}
+.hasChild:hover{
+		background:red;
+		position: relative;
+}
+.hasChild:hover ul{
+		display:block;
+		position:absolute;
+		bottom: 100%;
+		left: 0;
+		background: pink;
+}
+.menu ul{
+	display: none;
+}
+.imagine1{
+		display: block;
+		margin-right: auto;
+		width: 40%;
+		height: auto;
+		margin: 2%;
+}
+.tabelul table{
+		 width: 100%;
+		 text-align:center;
+		 background-color: #FF1493;
+		 border: 1px solid black;
+}
+
+.tabelul td{
+
+		  text-align: center;
+		  font-weight:bold;
+		  padding: 2%;
+		  border: 1px solid black;
+}
+
+.tabelul th{
+		  padding-top: 2%;
+		  padding-bottom: 2%;
+		  text-align: center;
+		  background-color: #000;
+		  color: white;
+		  border: 1px solid black;
+}
+
+.container{
+	position: relative;
+	width: 40%;
+	height:100%;
+}
+
+.image{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.overlay {
+	  position: absolute;
+	  bottom: 100%;
+	  left: 0;
+	  right: 0;
+	  background-color: #000;
+	  overflow: hidden;
+	  width: 100%;
+	  height:0;
+	  transition: .5s ease;
+}
+
+.container:hover .overlay {
+	bottom: 0;
+	height: 100%;
+}
+
+.text {
+	  color: white;
+	  font-size: 20px;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	  text-align: center;
+}
+
+.btn {
+	background-color: DarkMagenta;
+	color: white;
+	padding: 14px 20px;
+	margin: 2% 3%;
+	border: none;
+	cursor: pointer;
+	width: 20%;
+}
+
+.container1 {
+	padding: 3%;
+}
+
+#thh{
+	width:60%;
+}
+
+.slides{
+  width: 700%;
+  height: 60%;
+  display: flex;
+}
+
+.slide{
+  width: 20%;
+  transition: 0.6s;
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+}
+#r1:checked ~ .s1{
+  margin-left: 0;
+}
+#r2:checked ~ .s1{
+  margin-left: -20%;
+}
+#r3:checked ~ .s1{
+  margin-left: -40%;
+}
+#r4:checked ~ .s1{
+  margin-left: -60%;
+}
+#r5:checked ~ .s1{
+  margin-left: -80%;
+}
+#r6:checked ~ .s1{
+  margin-left: -100%;
+}
+.sliders{
+  width: 30%;
+  height: 50%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.navigation{
+  position: relative;
+  top:80%;
+  bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-100%);
+  display: flex;
+  padding-bottom: 75%;
+}
+.bar1{
+  width: 170px;
+  height: 100px;
+  border: 2px solid #000;
+  background-image:url("https://i.pinimg.com/originals/4c/5b/1f/4c5b1f4d2af89cc9b052003ea00fb1ca.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar2{
+  width: 170px;
+  height: 100px;
+  border: 2px solid #000;
+  background-image:url("https://i.pinimg.com/originals/47/35/74/473574ea0f7980fd8272cfcfd51e71f0.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar3{
+  width: 170px;
+  height: 100px;
+  border: 2px solid #000;
+  background-image:url("https://www.cancan.ro/wp-content/uploads/2020/07/dorian-popa-operatie-2.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar4{
+  width: 170px;
+  height: 100px;
+  border: 2px solid #000;
+  background-image:url("https://i.pinimg.com/originals/22/74/8a/22748a206f382ca6d471b85c7b65cf4f.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar5{
+  width: 170px;
+  height: 100px;
+  border: 2px solid #000;
+  background-image:url("https://image.winudf.com/v2/image/Y29tLmxvdmV3YWxscGFwZXJzLnNwb3J0c2dpcmxzX3NjcmVlbnNob3RzXzFfZGE4YTJlNDk/screen-1.jpg?fakeurl=1&type=.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar6{
+  width: 170px;
+  height: 100px;
+  border: 2px solid #000;
+  background-image:url("http://www.laelitefitness.gr/wp-content/uploads/2019/11/screen-2.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.bar:hover{
+  background: #fff;
+}
+input[name="r"]{
+    position: absolute;
+    visibility: hidden;
+}
+@media screen and (max-width: 700px) {
+		  .slides {   
+		  
+			width:100%;
+			height: 100%;
+			display: flex;
+	 }
+}
+.cancelbtn {
+		  width: auto;
+		  padding: 10px 18px;
+		  background-color: Gray;
+}
+.container1 {
+		  padding: 16px;
+		}
+.footer1{
+	text-align: center;
+	background: linear-gradient(red, yellow ,blue);
+	bottom: 0;
+	left: 0;
+}
+.innerfooter1{
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	margin:0 auto;
+	justify-content: center;
+	align-items: center;
+	background: #000;
+	color: white;
+}
+.formm{
+	border: 3px solid pink;
+	background: #00FFFF;
+}
+input[type=text], input[type=password], input[list], input[type=number],input[type=date],input[type=email],input[type=tel],textarea, select{
+		  width: 20%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid DarkMagenta;
+		  background-color:rgb(191,191,191,0.8);
+		  box-sizing: border-box;
+		}
+		
+		

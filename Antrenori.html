@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Antrenori</title>
+		<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="sortare.js"></script>
+		
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "inner-header">	
+				<h1> Gym<span>Life Healty</span>Body </h1>
+			</div>
+		</div>
+		
+		<div class = "sliders">
+			<div class = "slides">
+				<input type="radio" name="r" id="r1" checked>
+				<input type="radio" name="r" id="r2">
+				<input type="radio" name="r" id="r3">
+				<input type="radio" name="r" id="r4">
+				<input type="radio" name="r" id="r5">
+				<input type="radio" name="r" id="r6">
+				<div class="slide s1">
+				  <img src="https://i.pinimg.com/originals/4c/5b/1f/4c5b1f4d2af89cc9b052003ea00fb1ca.jpg" alt="">
+				</div>
+				<div class="slide">
+				  <img src="https://i.pinimg.com/originals/47/35/74/473574ea0f7980fd8272cfcfd51e71f0.jpg" alt="">
+				</div>
+				<div class="slide">
+				  <img src="https://www.cancan.ro/wp-content/uploads/2020/07/dorian-popa-operatie-2.jpg" alt="">
+				</div>
+				<div class="slide">
+				  <img src="https://i.pinimg.com/originals/22/74/8a/22748a206f382ca6d471b85c7b65cf4f.jpg" alt="">
+				</div>
+				<div class="slide">
+				  <img src="https://image.winudf.com/v2/image/Y29tLmxvdmV3YWxscGFwZXJzLnNwb3J0c2dpcmxzX3NjcmVlbnNob3RzXzFfZGE4YTJlNDk/screen-1.jpg?fakeurl=1&type=.jpg" alt="">
+				</div>
+				<div class="slide">
+				  <img src="http://www.laelitefitness.gr/wp-content/uploads/2019/11/screen-2.jpg" alt="">
+				 </div>
+			</div>
+			<div class="navigation">
+				<label for="r1" class="bar1"></label>
+				<label for="r2" class="bar2"></label>
+				<label for="r3" class="bar3"></label>
+				<label for="r4" class="bar4"></label>
+				<label for="r5" class="bar5"></label>
+				<label for="r6" class="bar6"></label>
+			</div>
+		</div>
+		<div class = "tabelul">
+		<table border="1" id="Tabel">
+			<tr>
+				<th onclick="sortText();">Nume</th>
+				<th onclick="sortNumber();">Nota</th>
+			</tr>
+			<tbody id="tabelul">
+			<tr>
+				<td>Ștefan Achim</td>
+				<td>9</td>
+			</tr>
+		    <tr>
+				<td>Ladislau Balanov</td>
+				<td>8</td>
+		    </tr>
+		    <tr>
+				<td>Ion Geolgău</td>
+				<td>9</td>
+		    </tr>
+		    <tr>
+				<td>Andrei Sepsi</td>
+				<td>7</td>
+		    </tr>
+			<tr>
+				<td>Nicolae Tătaru</td>
+				<td>6</td>
+		    </tr>
+			<tr>
+				<td>Teodora Ungureanu</td>
+				<td>9</td>
+		    </tr>
+		    <tr>
+				<td>Cristian Dulca</td>
+				<td>6</td>
+		    </tr>
+		    <tr>
+				<td>Paul Viorel Dinu</td>
+				<td>8</td>
+		    </tr>
+		<tbody>
+		</table>
+		</div>
+		<nav>
+			<ul class = "menu">
+				<li>
+					<a href = "Principala.html">Acasă</a>
+				</li>
+				<li class="hasChild" >
+					<a href = "">Produse</a>
+					<ul>
+						<li><a href="Suplimente.html">Suplimente</a></li>
+						<li><a href="PentruEa.html">PentruEa</a></li>
+						<li><a href="">După Sport</a></li>
+						<li><a href="">După Obiectiv</a></li>
+					</ul>
+				</li>
+				<li class = "hasChild">
+					<a href = "">Register/Login</a>
+					<ul>
+						<li><a href = "ContClient.html"> Register Client </a></li>
+						<li><a href = "ContAntrenor.html"> Register Antrenor </a></li>
+						<li><a href = "CreareCont.html"> Login </a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "Antrenament.html">Antrenament</a>
+				</li>
+				<li>
+					<a href = "Antrenori.html">Antrenori</a>
+				</li>
+				<li>
+					<a href = "Detalii.html">Detalii</a>
+				</li>
+			</ul>
+		</nav>
+		<input type="hidden" id="name_order" value="asc">
+		<input type="hidden" id="age_order" value="asc">
+		<div class = "footer">
+				<div class = "innerfooter">
+					<p>Copyright &copy; 2021<p>
+					<p>Date de contact: griggmihai@yahoo.com<p>
+				</div>
+		</div>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Register</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+		<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "inner-header">	
+				<h1> Gym<span>Life Healty</span>Body </h1>
+			</div>
+		</div>
+		
+		<div>
+			<form method="post" class = "formm">
+				<div>
+					<h2>Înregistrare Antrenor:</h2>
+					<label><h3>Nume:</h3></label>
+					<input type="text" name="nume-client" maxlength="30">
+					<br>
+					<label><h3>Prenume:</h3></label>
+					<input type="text" name="prenume-client" maxlength="30" size = "17">
+					<br>
+					<label><h3>Vârstă:</h3></label>
+					<input type="number" name="varsta">
+					<br>									
+					<label><h3>Email:</h3></label>
+					<input type="Email" name="email">
+					<br>
+					<label><h3>Telefon:</h3></label>
+					<input type="number" name="telefon">
+					<br>
+					<label><h3>Parolă:</h3></label>
+					<input type="password" name="parola">
+					<br>
+					<label><h3>Categoria de vârstă:</h3></label>
+					<h4>
+						<input type="radio" checked name="categorieVarsta" value="0"> între 10 și 18 ani
+						<input type="radio" name="categorieVarsta" value="1"> între 18 și 25 ani
+						<input type="radio" name="categorieVarsta" value="2"> între 25 și 40
+						<input type="radio" name="categorieVarsta" value="3"> 40+ 
+					</h4>
+					<label><h3>Antrenor Pentru:</h3></label>
+					<h4>
+						<input type="checkbox" checked name="fit" value="fitness">Fitness
+						<input type="checkbox" name="gymm" value="gym"> Gym 
+					</h4>
+					<label for="conc"> <h3>Selectați numărul de concursuri la care ați participat: </h3></label>
+					<h4>
+						<select name="conc" id="conc">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2" selected>2</option>
+						<option value="3">3+</option>
+						</select>
+					</h4>
+					
+					<label><h3>Adresa:</h3></label>
+					<textarea name="textlung" cols="40" rows="10" disabled>Din cauza pandemiei cursurile se vor desfăsura online așa că nu mai este nevoie de adresă!!</textarea>
+					<br><br>
+					<input type="submit" value="Înregistrare" class = "btn">
+					<input Type="reset" Value="Cancel" class = "cancelbtn">
+					
+				</div>
+			</form>
+		</div>
+		
+		<nav>
+			<ul class = "menu">
+				<li>
+					<a href = "Principala.html">Acasă</a>
+				</li>
+				<li class="hasChild" >
+					<a href = "">Produse</a>
+					<ul>
+						<li><a href="Suplimente.html">Suplimente</a></li>
+						<li><a href="PentruEa.html">PentruEa</a></li>
+						<li><a href="">După Sport</a></li>
+						<li><a href="">După Obiectiv</a></li>
+					</ul>
+				</li>
+				<li class = "hasChild">
+					<a href = "">Register/Login</a>
+					<ul>
+						<li><a href = "ContClient.html"> Register Client </a></li>
+						<li><a href = "ContAntrenor.html"> Register Antrenor </a></li>
+						<li><a href = "CreareCont.html"> Login </a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "Antrenament.html">Antrenament</a>
+				</li>
+				<li>
+					<a href = "Antrenori.html">Antrenori</a>
+				</li>
+				<li>
+					<a href = "Detalii.html">Detalii</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class = "footer">
+				<div class = "innerfooter">
+					<p>Copyright &copy; 2021<p>
+					<p>Date de contact: griggmihai@yahoo.com<p>
+				</div>
+		</div>
+		
+		
+		
+	</body>
+</html>

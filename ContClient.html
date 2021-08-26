@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Produse Fitness</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+		<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://kit.fontawesome.com/64a4e68b05.js" crossorigin="anonymous"></script>
+		<style>
+		form {
+			border: 3px solid #f1f1f1;
+			background: rgb(0,0,0,0.2);
+		}
+
+		.form-control {		
+			position:relative;
+		}
+		
+		.form-control i{
+			position:absolute;
+			top:40px;
+			left:318px;
+			visibility:hidden;
+		}
+		
+		.form-control.succes i.fa-check-circle{
+			color:rgb(0,128,0);
+			visibility:visible;	
+		}
+		
+		.form-control.succes input[type=text] {
+			 border:1px solid rgb(0,128,0)  ;
+			
+		}
+		
+		.form-control.succes input[type=number] {
+			 border:1px solid rgb(0,128,0)  ;
+			
+		}
+		
+		.form-control.succes input[type=password] {
+			 border:1px solid rgb(0,128,0)  ;
+			
+		}
+		
+		.form-control.succes input[type=email] {
+			 border:1px solid rgb(0,128,0)  ;
+			
+		}
+		
+		.form-control.succes input[type=tel] {
+			 border:1px solid rgb(0,128,0)  ;
+			
+		}
+		
+		.form-control.error i.fa-exclamation-circle{
+			visibility:visible;
+			color:#e74c3c;
+		}
+	
+		.form-control.error input[type=text]{
+			 border:1px solid #e74c3c ;
+		}
+		
+		.form-control.error input[type=number]{
+			border:1px solid #e74c3c ;
+		}	
+		
+		.form-control.error input[type=email]{
+			border:1px solid #e74c3c ;
+		}	
+		
+		.form-control.error input[type=tel]{
+			border:1px solid #e74c3c ;
+		}	
+		
+		.form-control.error input[type=password]{
+			border:1px solid #e74c3c ;
+		}	
+
+		.container {
+		  padding: 16px;
+		  background-color:rgba(0,0,0,0.2);
+		}
+
+		</style>
+		<script type = "text/javascript">
+			function DropDown(list1,list2)
+			{
+				var Cluj = ['Dej', 'Deușu', 'Gherla'];
+				var Alba = ['Aiud', 'Arieșeni', 'Blaj'];
+				var Vâlcea = ['Brezoi', 'Băbeni', 'Băile Govora', 'Călimănești'];
+
+				switch (list1.value)
+				{
+					case 'Cluj':
+						list2.options.length = 0;
+						for (i = 0; i < Cluj.length; i ++)
+						{
+							createOption(list2, Cluj[i], Cluj[i]);
+						}
+					break;
+					case 'Alba':
+						list2.options.length = 0; 
+						for (i = 0; i < Alba.length; i++)
+						{
+							createOption(list2, Alba[i], Alba[i]);
+						}
+					break;
+					case 'Vâlcea':
+						list2.options.length = 0;
+						for (i = 0; i < Vâlcea.length; i++)
+						{
+							createOption(list2, Vâlcea[i], Vâlcea[i]);
+						}
+					break;
+					default:
+						list2.options.length = 0;
+					break;
+				}
+
+			}
+
+			function createOption(list2, text, value)
+			{
+				var opt = document.createElement('option');
+				opt.value = value;
+				opt.text = text;
+				list2.options.add(opt);
+			}
+		</script>
+	</head>
+	<body>
+		<div class = "header">
+			<div class = "inner-header">	
+				<h1> Gym<span>Life Healty</span>Body </h1>
+			</div>
+		</div>
+		
+		<div>
+			
+			<form action="action.php" method="get" id="form2" class="formm">
+				<div class="form-control">
+					<label><b>Nume</b></label><br>
+					<input type="text" maxlength="20"id="nume">
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="form-control">
+					<label ><b>Prenume</b></label><br>
+					<input type="text" id="prenume" />
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="form-control">
+						<label><b>Data nașterii</b></label><br>
+						<input type="text" id="data"  placeholder="'zz/ll/aaaa' 'll/zz/aaaa' 'zz/ll/aa'" ><br>	
+						<i class="fas fa-check-circle"></i>
+						<i class="fas fa-exclamation-circle"></i>
+					</div>
+				<div class="form-control">
+					<label><b>Vârstă</b></label><br>
+					<input type="number" maxlength="50" id="varsta"/>
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="form-control">
+					<label><b>Email</b></label><br>
+					<input type="email" placeholder="nume@yahoo/gmail/others" id="email"/>
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="form-control">
+					<label><b>Telefon</b></label><br>
+					<input type="tel" placeholder="(+40) *** *** ***" id="tel" />
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="form-control">
+					<label><b>Nume utilizator</b></label><br>
+					<input type="text" id="username"/>
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="form-control">
+					<label><b>Parola</b></label><br>
+					<input type="password" id="parola"   />
+					<i class="fas fa-check-circle"></i>
+					<i class="fas fa-exclamation-circle"></i>
+				</div>
+				<div class="clearfix">
+					<button type="button" class="cancelbtn">Anulare</button>
+					<button type="submit" class="btn">Submit</button>
+				</div>
+			</form>		
+			
+			
+			<script>
+			const form = document.getElementById('form2');
+			const nume = document.getElementById('nume');
+			const prenume = document.getElementById('prenume');
+			const data=document.getElementById('data');
+			const varsta = document.getElementById('varsta');
+			const email = document.getElementById('email');
+			const tel=document.getElementById('tel');
+			const username=document.getElementById('username');
+			const parola=document.getElementById('parola');
+			
+			
+			form.addEventListener('input', e => {
+				e.preventDefault();
+				
+				checkInputs();
+			});
+			
+			form.addEventListener('submit', e => {
+				e.preventDefault();
+				
+				checkInputs();
+			});
+
+		function checkInputs() {
+			const numeValue = nume.value.trim();
+			const prenumeValue = prenume.value.trim();
+			const dataValue=data.value.trim();
+			const varstaValue = varsta.value.trim();
+			const emailValue = email.value.trim();
+			const telValue= tel.value.trim();
+			const usernameValue=username.value.trim();
+			const parolaValue=parola.value.trim();
+			
+			if(numeValue === '') {
+				setErrorFor(nume);
+			} else {
+				setSuccessFor(nume);
+			}
+			
+			if(prenumeValue === ''){
+				setErrorFor(prenume);
+			}else{
+				setSuccessFor(prenume);
+			}
+			
+			if(dataValue===''){
+						setErrorFor(data);
+					}else if(!isValidDate2(dataValue)){
+						setErrorFor(data);
+					}else{
+						setSuccessFor(data);
+					}
+			
+			if(varstaValue===''){
+				setErrorFor(varsta);
+			}else{
+				setSuccessFor(varsta);
+			}
+			
+			if(emailValue===''){
+				setErrorFor(email);
+			}else if(!isEmail(emailValue)){
+				setErrorFor(email);
+			}else{
+				setSuccessFor(email);
+			}
+			
+			if(telValue ===''){
+				setErrorFor(tel);
+			}else if (!isTel(telValue)){
+				setErrorFor(tel);
+			}else{
+				setSuccessFor(tel);
+			}
+			
+						
+			if (usernameValue===''){
+				setErrorFor(username);
+			}else if(!isUsername(usernameValue)){
+				setErrorFor(username);
+			}else{
+				setSuccessFor(username);
+			}
+			
+			if(parolaValue ===''){
+				setErrorFor(parola);
+			}else if(!isPassword(parolaValue)){
+				setErrorFor(parola);
+			}else{
+				setSuccessFor(parola);
+			}
+			
+		}
+			
+		function setErrorFor(input) {
+			const formControl = input.parentElement;
+			
+			formControl.className = 'form-control error';
+			
+		}
+		
+		function setSuccessFor(input){
+			const formControl = input.parentElement;
+			formControl.className = 'form-control succes';
+		}
+		
+		function isUsername(username){
+			return /^(?=.{5,}$)(?=.*[a-z])(?=.*[0-9]).*$$/.test(username);
+		}
+		
+		function isEmail(email){
+			 return /^([A-Za-z0-9_])+@([A-Za-z0-9_.])+\.([A-Za-z]{2,4})$/.test(email);
+		}
+	
+		function isTel(tel){
+			return /[(][+][4][0][)] [0-9]{3} [0-9]{3} [0-9]{3}/.test(tel);
+		}
+		
+		function isPassword(parola){
+				
+			return /^(?=.{6,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*!).*$/.test(parola);
+		}
+		
+		function isValidDate2(data) {
+			
+			  var regex = /^([0-9]{1,2})[\/](\d{1,2})[\/](\d{4})$/;
+				  parts = regex.exec(data);
+				 
+
+			  if (parts) {
+				var date = new Date ( (+parts[3]), (+parts[2]),(+parts[1])-1 );
+				if ( ( date.getDate() == parts[1]-1 ) && ( date.getMonth() == parts[2] ) && ( date.getFullYear() == parts[3] ) ) {
+				  return date;
+				}
+				
+				var date2=new Date ( (+parts[3]), (+parts[1])-1, (+parts[2]) );
+				if ( ( date2.getDate() == parts[2] ) && ( date2.getMonth() == parts[1]-1 ) && ( date2.getFullYear() == parts[3] ) ) {
+				  return date2;
+				}
+			  }
+			  
+			  
+			   var regex2 = /^([0-9]{1,2})[\/](\d{1,2})[\/](\d{2})$/;
+				parts2=regex2.exec(data);
+				
+			 if (parts2) {
+				var date3 = new Date ( (+parts2[3]), (+parts2[2]),(+parts2[1])-1 );
+				if ( ( date3.getDate() == parts2[1]-1 ) && ( date3.getMonth() == parts2[2] ) && ( date3.getFullYear().toString().substr(-2) == parts2[3] ) ) {
+				  return date3;
+				}
+			}
+			
+			  
+			  return false;
+
+			}
+			
+		
+
+		
+		</script>
+			
+		</div>
+		
+		<nav>
+			<ul class = "menu">
+				<li>
+					<a href = "Principala.html">Acasă</a>
+				</li>
+				<li class="hasChild" >
+					<a href = "">Produse</a>
+					<ul>
+						<li><a href="Suplimente.html">Suplimente</a></li>
+						<li><a href="PentruEa.html">PentruEa</a></li>
+						<li><a href="">După Sport</a></li>
+						<li><a href="">După Obiectiv</a></li>
+					</ul>
+				</li>
+				<li class = "hasChild">
+					<a href = "">Register/Login</a>
+					<ul>
+						<li><a href = "ContClient.html"> Register Client </a></li>
+						<li><a href = "ContAntrenor.html"> Register Antrenor </a></li>
+						<li><a href = "CreareCont.html"> Login </a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "Antrenament.html">Antrenament</a>
+				</li>
+				<li>
+					<a href = "Antrenori.html">Antrenori</a>
+				</li>
+				<li>
+					<a href = "Detalii.html">Detalii</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class = "footer">
+				<div class = "innerfooter">
+					<p>Copyright &copy; 2021<p>
+					<p>Date de contact: griggmihai@yahoo.com<p>
+				</div>
+		</div>
+		
+		
+		
+	</body>
+</html>

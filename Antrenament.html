@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ro">
+	<head>
+		<title>Antrenament</title>
+		<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Open+Sans:400,300,600">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="derulare.js"></script>
+	</head>
+		<style>
+		.box1 {
+		  border: 5px solid #00ffff;
+		  width: 50%;
+		  height: 50%;
+		  transition: all 1s linear;
+		  display: block;
+		}
+
+		.hidden {
+		  display: none;
+		}
+
+		.visuallyhidden {
+		  opacity: 0;
+		}
+		
+		#slider {
+		position: relative;
+		overflow: hidden;
+		margin: 100px 0 auto;
+		border-radius: 4px;
+		}
+		
+		#slider ul {
+		  position: relative;
+		  margin: 0;
+		  padding: 0;
+		  height: 200px;
+		  list-style: none;
+		}
+
+		#slider ul li {
+		  position: relative;
+		  display: block;
+		  float: left;
+		  margin: 0;
+		  padding: 0;
+		  width: 500px;
+		  height: 300px;
+		  background: #FF1493;
+		  text-align: center;
+		  line-height: 300px;
+		}
+
+		a.control_prev, a.control_next {
+		  position: absolute;
+		  top: 40%;
+		  z-index: 999;
+		  display: block;
+		  padding: 4% 3%;
+		  width: auto;
+		  height: auto;
+		  background: #000000;
+		  color: #fff;
+		  text-decoration: none;
+		  font-weight: 600;
+		  font-size: 18px;
+		  opacity: 0.8;
+		  cursor: pointer;
+		}
+
+		a.control_prev:hover, a.control_next:hover {
+		  opacity: 1;
+		  -webkit-transition: all 0.2s ease;
+		}
+
+		a.control_prev {
+		  border-radius: 0 2px 2px 0;
+		}
+
+		a.control_next {
+		  right: 0;
+		  border-radius: 2px 0 0 2px;
+		}
+
+		.slider_option {
+		  position: relative;
+		  margin: 10px auto;
+		  width: 160px;
+		  font-size: 18px;
+		}
+
+
+		</style>
+		
+	<body>
+		<div class = "header">
+			<div class = "inner-header">	
+				<h1> Gym<span>Life Healty</span>Body </h1>
+			</div>
+		</div>
+		<div>
+			<li><b>Fitness</b>
+				<ol id = "MyList2">
+					<li class = "box1"><div>Fit Challenge - Ediția 1</div><a href = "https://www.youtube.com/watch?v=UBMk30rjy0o&t=13s&ab_channel=JasiAmvsJasiAmvsVerificat" target = "_blank">Read more</a></li>
+					<li class = "box1"><div>Fit Challenge - Ediția 2</div><a href = "https://www.youtube.com/watch?v=UItWltVZZmE&ab_channel=PamelaReif" target = "_blank">Read more</a></li>
+					<li class = "box1"><div>Fit Challenge - Ediția 3</div><a href = "https://www.youtube.com/watch?v=H2U3HwAyBXg&ab_channel=MadFit" target = "_blank">Read more</a></li>
+				</ol>
+				<button type="button" onclick="before()">Before</button>
+				<button type="button" onclick="next()">Next</button>
+			</li>
+			<script>
+			var ord = document.getElementById("MyList2");
+			var lista = ord.getElementsByTagName("LI");
+			for(var i = 1; i < lista.length; i ++)
+			{
+				lista[i].classList.add('visuallyhidden');
+				lista[i].classList.add('hidden');
+			}
+			var i = 1;
+			function frame(index)
+			{
+				if(index == 0)
+				{
+					lista[(lista.length - 1)].classList.add('visuallyhidden');
+					setTimeout(function () {
+					  lista[(lista.length - 1)].classList.add('hidden');
+					}, 2000);
+				}
+				else
+				{
+					lista[index - 1].classList.add('visuallyhidden');		
+					setTimeout(function () {
+					  lista[index - 1].classList.add('hidden');
+					}, 2000);
+				}
+				lista[index].classList.remove('hidden');
+				setTimeout(function () {
+				  lista[index].classList.remove('visuallyhidden');
+				}, 2000);
+				
+			}
+
+			var id = setInterval(function () {console.log(i); frame(i); i++;
+				if (i >= lista.length)
+				{
+					i = 0;
+				}}, 8000);
+
+			var nextClicked = 1;
+
+			function next(){
+				clearInterval(id);
+				if(i == 0){
+					lista[(lista.length - 1)].classList.add('visuallyhidden');
+					lista[(lista.length - 1)].classList.add('hidden');
+				}
+				else{
+					lista[i - 1].classList.add('visuallyhidden');
+					lista[i - 1].classList.add('hidden');
+				}
+				lista[i].classList.remove('hidden');
+				lista[i].classList.remove('visuallyhidden');
+				nextClicked = 1;
+				i = i + 1;
+				if (i >= lista.length)
+				{
+					i = 0;
+				}
+				id = setInterval(function () {console.log(i); frame(i); i++;
+					if (i >= lista.length){
+						i = 0;
+					}}, 8000);
+			}
+
+			function before(){
+				clearInterval(id);
+				if(nextClicked == 1)
+				{
+					i = i - 2;
+					nextClicked = 0;
+				}
+				else
+				{
+					i = i - 1;
+				}
+				if(i < 0)
+				{
+					i = lista.length - 1;
+				}
+				if(i == lista.length - 1){
+					lista[0].classList.add('visuallyhidden');
+					lista[0].classList.add('hidden');
+				}
+				else{
+					lista[i + 1].classList.add('visuallyhidden');
+					lista[i + 1].classList.add('hidden');
+				}
+				lista[i].classList.remove('hidden');
+				lista[i].classList.remove('visuallyhidden');
+				id = setInterval(function () {console.log(i); frame(i); i++;
+					if (i >= lista.length){
+						i = 0;
+					}}, 8000);
+			}
+		
+		</script>
+			<ul>
+				<li><b>Gym</b>
+				<div id = "slider">
+					<a href="#" class="control_next">Next</a>
+					<a href="#" class="control_prev">Before</a>
+					<ul>
+						<li><div>Picioare  <a href = "https://www.youtube.com/watch?v=0rh5HCNU_Iw&ab_channel=CHRISHERIA" target = "_blank">Read more </a></div></li>
+						<li><div>Piept  <a href = "https://www.youtube.com/watch?v=BkS1-El_WlE&t=479s&ab_channel=THENX" target = "_blank">Read more</a></div></li>
+						<li><div>Spate si umeri  <a href = "https://www.youtube.com/watch?v=ClzTDsQDC0E&ab_channel=CHRISHERIA" target = "_blank">Read more</a></div></li>
+						<li><div>Abdomen  <a href = "https://www.youtube.com/watch?v=3p8EBPVZ2Iw&t=7s&ab_channel=THENX" target = "_blank">Read more</a></div></li>
+					</ul>
+				</div>
+				</li>	
+			</ul>
+		
+		<nav>
+			<ul class = "menu">
+				<li>
+					<a href = "Principala.html">Acasă</a>
+				</li>
+				<li class="hasChild" >
+					<a href = "">Produse</a>
+					<ul>
+						<li><a href="Suplimente.html">Suplimente</a></li>
+						<li><a href="PentruEa.html">PentruEa</a></li>
+						<li><a href="">După Sport</a></li>
+						<li><a href="">După Obiectiv</a></li>
+					</ul>
+				</li>
+				<li class = "hasChild">
+					<a href = "">Register/Login</a>
+					<ul>
+						<li><a href = "ContClient.html"> Register Client </a></li>
+						<li><a href = "ContAntrenor.html"> Register Antrenor </a></li>
+						<li><a href = "CreareCont.html"> Login </a></li>
+					</ul>
+				</li>
+				<li>
+					<a href = "Antrenament.html">Antrenament</a>
+				</li>
+				<li>
+					<a href = "Antrenori.html">Antrenori</a>
+				</li>
+				<li>
+					<a href = "Detalii.html">Detalii</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class = "footer">
+				<div class = "innerfooter">
+					<p>Copyright &copy; 2021<p>
+					<p>Date de contact: griggmihai@yahoo.com<p>
+				</div>
+		</div>
+		
+		
+		
+	</body>
+</html>
